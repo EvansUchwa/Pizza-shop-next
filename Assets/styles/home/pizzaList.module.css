@@ -1,0 +1,37 @@
+.pizzaList{
+    background-color: #ededed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 50px;
+}
+.plPizzas{
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.pizzaCard{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.pizzaCard img{
+    object-fit: contain;
+}
+.pizzaCard b{
+    color: var(--color1);
+    margin: 5px 0 0 0;
+    font-size: 3vh;
+    text-transform: uppercase;
+}
+.pizzaCard span{
+    color: #333;
+    margin: 10px 0;
+}

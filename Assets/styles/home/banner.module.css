@@ -1,0 +1,43 @@
+.banner{
+position: relative;
+width: 100%;
+display: flex;
+background-color: var(--color1);
+height: 90vh;
+}
+.bannerSliderNav{
+    position: absolute;
+    /* background-color: aliceblue; */
+    z-index: 1;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: space-between;
+}
+.bannerSliderNav i{
+    font-size: 20vh;
+    color: white;
+}
+.bannerSlider{
+    display: flex;
+    width: 300vw;
+    height: 100%;
+    transition: all .5s ease-in-out;
+}
+.bs_item{
+    width: 100vw;
+    position: relative;
+    height: 100%;
+}
+.bannerSlider img{
+    object-fit: contain;  
+}
+
+
+@media screen and (max-width: 512px) {
+    .bannerSlider img{
+
+}
+}

@@ -1,0 +1,93 @@
+.pizzaDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+.pizzaDetails input[type="checkbox"]{
+    accent-color: var(--color1);
+    -webkit-accent-color: var(--color1);
+}
+.pizzaDetails h3{
+    color: var(--color2);
+    width: 100%;
+    margin-bottom: 20px;
+}
+.pd_Pic{
+width: 40%;
+position: relative;
+height: 50vh;
+}
+.pd_Pic img{
+    object-fit: contain;
+}
+.pd_Text{
+width: 55%;
+}
+.pd_Text h1{
+text-transform: uppercase;
+color: var(--color2);
+}
+.pd_Text h2{
+    color: var(--color1);
+    margin: 20px 0;
+}
+.pd_Text p{
+    color: var(--color3);
+}
+.pd_Text article{
+    margin: 25px 0;
+}
+.pdt_sizes{
+display: flex;
+flex-wrap: wrap;
+}
+.pdt_sizes div{
+    display: flex;
+    gap: 50px;
+}
+.pdt_sizes div div{
+    position: relative;
+    display: flex;
+    /* display: flex; */
+}
+.pdt_sizes div b{
+    top: -10%;
+    left: 60%;
+position: absolute;
+background-color: grey;
+color: white;
+padding: 2px 5px;
+border-radius: 5px;
+z-index: 1;
+}
+.sizeSelected{
+    background-color: var(--color2) !important;
+    /* color: white; */
+}
+.pdt_ingrediants{
+    display: flex;
+    flex-direction: column;
+flex-wrap: wrap;
+}
+.pdt_ingrediants label{
+    color: var(--color3);
+}
+
+
+/*  */
+
+
+@media screen and (max-width: 512px) {
+    .pizzaDetails{
+        
+    }
+    .pd_Pic{
+    width: 90%;
+    }
+    .pd_Text{
+        margin-top: 50px;
+    width: 85%;
+    }
+}

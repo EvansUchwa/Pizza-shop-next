@@ -1,0 +1,34 @@
+.disabled {
+  background-color: var(--cwd4) !important;
+  color: grey !important;
+}
+.fieldError,
+.fieldSuccess {
+  width: 90%;
+  text-align: center;
+  margin: auto !important;
+  padding: 5px 0;
+  font-size: 15px;
+}
+.fieldError {
+  color: var(--errorColor);
+  animation: errAnim 0.5s ease 1;
+}
+
+.rounded {
+  border-radius: 100%;
+}
+.semiRounded {
+  border-radius: 50px;
+}
+
+@keyframes errAnim {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

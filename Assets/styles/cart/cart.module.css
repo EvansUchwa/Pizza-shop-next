@@ -1,0 +1,143 @@
+.cartTable{
+    width: 50%;
+}
+.cartTable > section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cartCard{
+width: 100%;
+padding: 10px 0;
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+background-color: var(--cwd1);
+/* box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px; */
+}
+.cC_left{
+    /* background-color: aquamarine; */
+text-align: center;
+width: 20%;
+}
+.cC_left section{
+    position: relative;
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+    }
+.cC_left section img{
+    object-fit: contain;
+}
+.cC_left p{
+    font-size: 3vh;
+    color: var(--color2);
+}
+.cC_right{
+    /* background-color: aqua; */
+display: flex;
+flex-direction: column;
+width: 75%;
+}
+.cCR_prices{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.cCR_prices b{
+    color: var(--color1);
+    font-size: 3vh;
+}
+.cCR_prices p{
+    color: grey;
+    font-size: 2vh;
+    font-weight: bolder;
+}
+.cCR_igs{
+margin-top: 10px;
+display: flex;
+gap: 5px;
+flex-wrap: wrap;
+}
+.cCR_igs span{
+padding: 0 5px;
+/* background-color: var(--cwd2); */
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.cCR_igs span i{
+    color: var(--color1);
+    font-size: 20px;
+    margin-left: 10px;
+    text-align: center;
+    display: inline-block;
+}
+.cC_foot{
+margin: 10px auto 0 auto;
+border-top: solid 2px var(--cwd2);
+padding-top: 10px;
+width: 90%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.cC_foot > span {
+    color: var(--color1);
+    font-size: 3vh;
+}
+.ct_upToCartBtns span{
+border: solid 1px var(--color1);
+background-color: var(--color1);
+color: white;
+border-radius: 100%;
+width: 30px;
+height: 30px;
+line-height: 25px;
+display: inline-block;
+}
+.ct_upToCartBtns b{
+    margin: 0 10px;
+}
+
+/* Total */
+.cartTotal{
+    width: 40%;
+    background-color: var(--color2);
+    color: white;
+    padding: 25px 40px;
+}
+.cartTotal h2{
+    margin-bottom: 10px;
+}
+.cartTotal p{
+    margin-bottom: 10px;
+}
+.cartTotal p b{
+    margin-right: 15px;
+}
+.paiementBtns{
+margin-top: 10px;
+display: flex;
+gap: 10px;
+}
+.deliveredPaiement{
+background-color: white;
+color: var(--color1);
+}
+.paypalPaiement{
+background-color: #002f86;
+color: white;
+}
+
+
+@media screen and (max-width: 512px) {
+    .cartTable{
+        width: 95%;
+    }
+    .cartTotal{
+        margin-top: 20px;
+        width: 90%;
+    }
+}

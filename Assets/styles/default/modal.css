@@ -1,0 +1,80 @@
+.modal {
+  background-color: var(--ob6 );
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999999999;
+}
+.modal > section {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  animation: modalFade 0.3s ease-in;
+  max-height: 90%;
+  min-width: 300px;
+  max-width: 90%;
+  overflow: auto;
+}
+.mb-head-closer,
+.mb-foot-closer {
+  width: 100%;
+  margin: auto;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.mb-head-closer {
+  text-align: right;
+}
+.mb-head-closer i {
+  cursor: pointer;
+  font-size: 25px;
+}
+.mb-foot-closer {
+}
+.confirmationModal{
+}
+.confirmationModal p{
+    margin: auto;
+    max-width: 90%;
+    font-size: 25px;
+    text-align: center;
+}
+.confirmationModal p b{
+    color: var(--color2);
+}
+.confirmationModal section{
+    max-width: 90%;
+    margin: 25px auto;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+.confirmationModal section span{
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.confirmationModal section span:first-child{
+    background-color: var(--color2);
+    color: white;
+}
+.confirmationModal section span:last-child{
+    background-color: var(--cwd3);
+}
+@keyframes modalFade {
+  from {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

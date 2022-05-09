@@ -1,0 +1,56 @@
+.orders{
+    width: 90%;
+    margin: auto;
+    padding: 50px 0;
+}
+.orders h1{
+    text-align: center;
+}
+.ordersList{
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.orderItem{
+
+}
+.oi_infos{
+background-color: var(--cwd1);
+padding: 10px 0;
+text-align: center;
+overflow-x: auto;
+}
+.oi_status{
+margin-top: 25px;
+}
+.oi_status i{
+    color: var(--cwd4) ;
+    font-size: 6Vh;
+}
+.currentStatus{
+    color: var(--color2) !important;
+}
+.oi_status b{
+    color: var(--color1);
+    margin: 10px 0;
+}
+.oi_infos,.oi_status{
+    display: flex;
+    justify-content: space-evenly;
+}
+.oi_infos p,.oi_status p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* position: relative; */
+}
+
+
+@media screen and (max-width: 512px) {
+    .oi_infos{
+        gap: 15px;
+        font-size: 12px;
+    }
+}
