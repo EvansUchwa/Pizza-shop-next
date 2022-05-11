@@ -2,7 +2,6 @@ import axios from 'axios'
 import Head from 'next/head'
 import HomeBanner from '../pageComponents/home/banner'
 import PizzaList from '../pageComponents/home/pizzaList'
-import { checkWindow, getWindowHost } from '../utils/window'
 
 export default function Home({ pizzaList }) {
   return (
@@ -28,7 +27,7 @@ export const getServerSideProps = async (context) => {
   const host = req.headers.host
   const protocol = req.headers["x-forwarded-proto"] || req.connection.encrypted ? "https://" : "http://";
   // console.log(protocol + '__' + )
-  const res = await axios(protocol + host + '/api/pizza');
+  const res = await axios(protocol + host + '/api/product');
   return {
     props: {
       pizzaList: res.data

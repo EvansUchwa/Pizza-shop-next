@@ -75,6 +75,10 @@ flex-wrap: wrap;
     color: var(--color3);
 }
 
+.pdt_addToCart > button{
+margin-top: 10px;
+}
+
 
 /*  */
 

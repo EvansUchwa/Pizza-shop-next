@@ -1,0 +1,118 @@
+.dashboard{
+    padding: 50px 0;
+}
+.d_menuAndResult{
+max-width: 90%;
+margin: auto;
+display: flex;
+flex-direction: column;
+}
+.d_menus{
+margin: 0 auto;
+/* background-color: var(--c1d1); */
+box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+padding:  10px;
+display: flex;
+ gap: 10px;
+}
+.d_menus input{
+   display: none;
+}
+.d_menus input:checked + span{
+    background-color: var(--color1);
+    color: white;
+ }
+.d_menus span{
+    display: inline-block;
+    padding: 10px 15px;
+        background-color: white;
+        color: grey;
+}
+.d_results{
+text-align: center;
+}
+.d_results button,.d_results p{
+    padding: 10px 25px;
+    margin: 25px 0;
+}
+
+
+
+/* Dash table */
+
+.dashTable{
+width: 100%;
+}
+.dashTable thead{
+    background-color: var(--color2);
+    color: white;
+   
+}
+.dashTable th{
+    padding: 10px 0;
+}
+.dashTable tr:nth-child(even){
+    background-color: var(--c2d2);
+}
+.dashTable td{
+    text-align: center;
+    padding: 5px 0;
+}
+.dashTable td > i{
+    color: white;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+}
+.dashTable td:last-child{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.dashTable td > i:nth-child(1){
+background-color: var(--color1);
+}
+.dashTable td > i:nth-child(2),.dashTable td > span{
+    background-color: var(--color2);
+}
+.dashTable td > span{
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.dashTable td > i:nth-child(3){
+    background-color: var(--color3);
+}
+/*  */
+
+
+/* Modal */
+.detailModal{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.detailModal p{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.detailModal p b{
+    font-size: 2vh;
+    color: var(--color1);
+    margin-bottom: 5px;
+}
+/*  */
+
+
+
+@media screen and (max-width: 512px) {
+    .d_menuAndResult{
+        max-width: initial;
+        width: 100%;
+    }
+    .dashTable {
+        font-size: 12px;
+    }
+}

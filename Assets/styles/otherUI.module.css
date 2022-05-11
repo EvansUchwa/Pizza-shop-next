@@ -1,19 +1,16 @@
-.pdt_addToCart{
-
-}
 .updateItemQuantityBtns {
     display: flex;
     align-items: center;
 }
 .updateItemQuantityBtns span{
-    background-color: var(--color1);
-    width: 4vh;
-    height: 4vh;
-    line-height: 3vh;
-    font-size: 3vh;
+    /* background-color: var(--color1); */
+    border: solid 2px var(--color1);
+    width: 45px;
+    height: 45px;
+    line-height: 40px;
     cursor: pointer;
     border-radius: 100%;
-    color: white;
+    color: var(--color1);
     text-align: center;
 
 }
@@ -21,3 +18,23 @@
 margin: 0 10px;
 color: var(--color1);
 }
+
+
+/* Ressources not found */
+.ressourcesNotFound{
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+    padding: 50px 0;
+    color: var(--color3);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.ressourcesNotFound a{
+    margin-top: 10px;
+background-color: var(--color2);
+color: white;
+padding: 10px 25px;
+}
+/*  */

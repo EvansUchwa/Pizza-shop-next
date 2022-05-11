@@ -26,9 +26,9 @@ export function upQuantityToCart(typeUpdate, item, itemIndex) {
     }
 }
 
-export function removeToCart(itemId) {
+export function removeToCart(index) {
     return {
         type: "REMOVE_CART_ITEM",
-        payload: itemId
+        payload: index
     }
 }

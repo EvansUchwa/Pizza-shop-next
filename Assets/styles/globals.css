@@ -1,6 +1,8 @@
 :root{
   --color1: #d1411e;
+  --c1d1: #fcede9;
   --color2: #007074;
+  --c2d2: #e6feff;
   --color3: #333333;
 
   --cwd1: #f2f2f2;
@@ -41,17 +43,28 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  display: inline-block;
 }
 i{
   cursor: pointer;
+  display: inline-block;
 }
 h1,h2,h3,p{
   margin: 0;
+}
+h1{
+  max-width: 90%;
+  text-align: center;
+  margin: auto;
+  color: var(--color2);
 }
 ul{
   list-style: none;
   padding: 0;
   margin: 0;
+}
+label{
+  cursor: pointer;
 }
 img{
   /* object-fit: cover; */
@@ -61,7 +74,7 @@ button{
   background-color: var(--color1);
   color: white;
   padding: 10px 25px;
-  border-radius: 50px;
+  border-radius: 5px;
   cursor: pointer;
 }
 * {

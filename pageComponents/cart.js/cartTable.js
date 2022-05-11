@@ -38,7 +38,7 @@ function CartTable({ cart }) {
                             <UpdateItemQuantityBtns props={{ count: item.quantity, alreadyOnCart: true, item, index }} />
                             <span>
                                 <i className='mdi mdi-delete'
-                                    onClick={() => dispatch(removeToCart(item.id))}></i>
+                                    onClick={() => dispatch(removeToCart(index))}></i>
                             </span>
                         </div>
                     </article>

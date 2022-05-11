@@ -18,9 +18,9 @@ const cartReducer = (state = defaultCartValue, action) => {
 
         case 'REMOVE_CART_ITEM': {
             const copyCart = [...state];
-            const filtered = copyCart.filter(item => item.id != action.payload);
-            localStorage.setItem('pizza-app-cart', JSON.stringify(filtered))
-            return filtered;
+            copyCart.splice(action.payload, 1)
+            localStorage.setItem('pizza-app-cart', JSON.stringify(copyCart))
+            return copyCart;
         }
 
 

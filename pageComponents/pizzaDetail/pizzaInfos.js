@@ -24,9 +24,9 @@ function PizzaInfos({ pizzaDetails, pizzaIngrediants }) {
 
     function getPrice() {
         if (ingrediants.length === 0) {
-            return pizzaDetails.price[selectedPrice];
+            return pizzaDetails.sizesAndPrices[selectedPrice].price;
         } else {
-            let finalPrice = pizzaDetails.price[selectedPrice]
+            let finalPrice = parseInt(pizzaDetails.sizesAndPrices[selectedPrice].price);
             for (let i = 0; i < ingrediants.length; i++) {
                 finalPrice = finalPrice + ingrediants[i].price;
             }
@@ -62,7 +62,7 @@ function PizzaInfos({ pizzaDetails, pizzaIngrediants }) {
             quantity: count
         }
         dispatch(addToCart(newCartItem))
-        router.push('/cart')
+        // router.push('/cart')
     }
 
 
@@ -86,17 +86,17 @@ function PizzaInfos({ pizzaDetails, pizzaIngrediants }) {
                     <h3>Choisir la taille</h3>
                     <div>
                         {
-                            pizzaDetails.types.map((sz, ind) => <div
+                            pizzaDetails.sizesAndPrices.map((sp, ind) => <div
                                 style={{
-                                    width: pizzaSizes[sz],
-                                    height: pizzaSizes[sz]
+                                    width: pizzaSizes[sp.type],
+                                    height: pizzaSizes[sp.type]
                                 }}
                                 key={"size nb" + ind}
                                 onClick={() => handleSize(ind)}>
                                 <b className={selectedSize === ind
                                     ? styles.sizeSelected : ""}>
-                                    {sz}</b>
-                                <Image alt={"Taille " + sz.text + " de la pizza"}
+                                    {sp.type}</b>
+                                <Image alt={"Taille " + sp.type + " de la pizza"}
                                     src="/img/size.png"
                                     layout='fill'
                                     objectFit='cover'

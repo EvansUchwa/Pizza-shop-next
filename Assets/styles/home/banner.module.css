@@ -7,7 +7,6 @@ height: 90vh;
 }
 .bannerSliderNav{
     position: absolute;
-    /* background-color: aliceblue; */
     z-index: 1;
     width: 100%;
     left: 50%;
@@ -37,7 +36,10 @@ height: 90vh;
 
 
 @media screen and (max-width: 512px) {
-    .bannerSlider img{
-
-}
+    .banner{
+        height: 70vh;
+        }
+        .bannerSliderNav i{
+            font-size: 10vh;
+        }
 }

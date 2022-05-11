@@ -1,13 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
 import { modalSelector } from "../Store/selectors/modalSelector";
 import { setModalOnStore } from "../Store/actions/modalActions"
+import { useEffect } from "react";
+import { useRouter } from "next/router"
 
 export const Modal = ({ props }) => {
     const dispatch = useDispatch()
     // const { setModal } = props;
     const modal = useSelector(modalSelector).open;
     const content = useSelector(modalSelector).content;
-    const className = props && props.className ? props.className : ""
+    const className = props && props.className ? props.className : "";
+    const router = useRouter()
+
+    useEffect(() => {
+        dispatch(setModalOnStore(false))
+    }, [router]);
+
     if (!modal) {
         return null;
     }

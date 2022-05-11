@@ -1,7 +1,7 @@
 .orders{
     width: 90%;
     margin: auto;
-    padding: 50px 0;
+    padding: 100px 0;
 }
 .orders h1{
     text-align: center;
@@ -11,15 +11,15 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 90%;
 }
 .orderItem{
 
 }
 .oi_infos{
-background-color: var(--cwd1);
+background-color: var(--c1d1);
 padding: 10px 0;
 text-align: center;
-overflow-x: auto;
 }
 .oi_status{
 margin-top: 25px;
@@ -44,13 +44,21 @@ margin-top: 25px;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    word-break: break-all;
     /* position: relative; */
 }
 
 
 @media screen and (max-width: 512px) {
+    .ordersList{
+        width: 100%;
+    }
     .oi_infos{
         gap: 15px;
-        font-size: 12px;
+        /* font-size: 12px; */
+        flex-wrap: wrap;
+    }
+    .oi_infos p{
+        width: 45%;
     }
 }

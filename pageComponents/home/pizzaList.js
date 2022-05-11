@@ -16,16 +16,16 @@ function PizzaList({ pizzaList }) {
             </p>
             <section className={styles.plPizzas}>
                 {
-                    pizzaList.map((pz, index) => <article key={"pizza l pz nb" + index}
+                    pizzaList.map((product, index) => <article key={"pizza l pz nb" + index}
                         className={styles.pizzaCard}>
-                        <Link href={"/pizza/" + pz._id} passHref>
+                        <Link href={"/product/" + product._id} passHref>
                             <Image src="/img/pizza.png" alt="la pizza de la mama"
                                 width="100px" height="100px" />
                         </Link>
-                        <b>{pz.name}</b>
-                        <span>{pz.price[0]} €</span>
+                        <b>{product.name}</b>
+                        <span>{product.sizesAndPrices[0].price} €</span>
                         <p>
-                            {pz.description}
+                            {product.description}
                         </p>
                     </article>)
                 }

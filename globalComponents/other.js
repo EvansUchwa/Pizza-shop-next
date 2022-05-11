@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import styles from "../Assets/styles/otherUI.module.css"
 import { upQuantityToCart } from '../Store/actions/cartActions';
+import Image from "next/image"
+import Link from "next/link"
 
 
 export function UpdateItemQuantityBtns({ props }) {
@@ -24,7 +26,9 @@ export function UpdateItemQuantityBtns({ props }) {
                 } else {
                     handleAddOrUpdate('-')
                 }
-            }}>-</span>
+            }}>
+                <i className='mdi mdi-minus'></i>
+            </span>
             <b>{count} </b>
             <span onClick={() => {
                 if (alreadyOnCart) {
@@ -32,9 +36,17 @@ export function UpdateItemQuantityBtns({ props }) {
                 } else {
                     handleAddOrUpdate('+')
                 }
-            }}>+</span>
+            }}>
+                <i className='mdi mdi-plus'></i>
+            </span>
         </div>
     )
 }
 
-// onClick={() => dispatch(addToCart(pizzaDetails))}
+export const RessourcesNotFound = () => {
+    return <div className={styles.ressourcesNotFound}>
+        <Image src="/img/notFound.svg" alt="Ressource not found" width="300px" height="300px" />
+        <h1>Désolé :(,ressources non disponible</h1>
+        <Link href="">Revenir a l'accueil</Link>
+    </div>
+}

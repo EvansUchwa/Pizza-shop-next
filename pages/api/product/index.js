@@ -1,4 +1,4 @@
-import Pizza from "../../../models/pizzas";
+import Product from "../../../models/product";
 import DB_CONNEXION from "../../../utils/db";
 
 export default async function handler(req, res) {
@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     if (req.method == 'POST') {
         DB_CONNEXION()
         try {
-            const newPizza = await Pizza.create(req.body);
+            const newPizza = await Product.create(req.body);
 
             res.status(201).json(newPizza);
         } catch (error) {
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     } else if (method == 'GET') {
 
         try {
-            const getPizzas = await Pizza.find();
+            const getPizzas = await Product.find();
             res.send(getPizzas)
         } catch (error) {
             res.status(401).send(error)
