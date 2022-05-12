@@ -2,6 +2,8 @@ import Layout from '../globalComponents/Layout'
 import '../Assets/styles/globals.css'
 import '../Assets/styles/default/form.css'
 import '../Assets/styles/default/modal.css'
+import '../Assets/styles/default/utilClass.css'
+
 import '../Assets/styles/materialdesignicons.min.css'
 import { Provider } from 'react-redux'
 import store from '../Store'

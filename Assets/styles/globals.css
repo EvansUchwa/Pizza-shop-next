@@ -19,6 +19,9 @@
   --whatsappColor: #46c756;
   --telColor: #128c7e;
 
+  --errorColor: #b30000;
+  --successColor: #38d368;
+
   --ob2: rgba(0, 0, 0, 0.2);
   --ob4: rgba(0, 0, 0, 0.4);
   --ob6: rgba(0, 0, 0, 0.6);
@@ -38,6 +41,10 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+#__next > div{
+  padding: 100px 0;
 }
 
 a {

@@ -35,10 +35,16 @@ function Navbar() {
         </section>
       </Link>
 
-
-
     </nav>
   )
 }
 
+// export const getServerSideProps = (context) => {
+//   if (context.req.cookies.token)
+//     return {
+//       props: {
+//         isAuth: true
+//       }
+//     }
+// }
 export default Navbar

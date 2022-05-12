@@ -4,7 +4,7 @@ import styles from "../../Assets/styles/admin/dashboard.module.css"
 import OrderManager from '../../pageComponents/admin/orders/orderManager'
 import ProductManager from '../../pageComponents/admin/products/productManager'
 import { getProtocolAndHost } from '../../utils/request'
-function Dashboard({ products, orders }) {
+function Dashboard({ products, orders, isAuth }) {
     const [navType, setNavType] = useState("produits")
     const dashMenus = [
         { label: "Produits", value: "produits", id: "dm_1" },
@@ -23,6 +23,7 @@ function Dashboard({ products, orders }) {
     }
     return (
         <div className={styles.dashboard}>
+            {isAuth && <button className={styles.floatedDashBtn}>Se deconnecter</button>}
             <h1>Bonjour Admin ....</h1>
 
             <section className={styles.d_menuAndResult}>
@@ -57,24 +58,32 @@ function Dashboard({ products, orders }) {
 
 export const getServerSideProps = async (context) => {
     const { req } = context;
+    let products = []
+    let orders = []
+
     try {
         const produitsReq = await axios.get(getProtocolAndHost(req)
             + '/api/product');
         const ordersReq = await axios.get(getProtocolAndHost(req)
             + '/api/order');
-        return {
-            props: {
-                products: produitsReq.data,
-                orders: ordersReq.data
-            }
-        }
+        products = produitsReq.data,
+            orders = ordersReq.data
     } catch (error) {
         console.log(error)
+    }
+
+    if (req.cookies.token !== process.env.adminToken) {
         return {
-            props: {
-                products: [],
-                orders: []
+            redirect: {
+                destination: "/admin/login"
             }
+        }
+    }
+    return {
+        props: {
+            products,
+            orders,
+            isAuth: true
         }
     }
 

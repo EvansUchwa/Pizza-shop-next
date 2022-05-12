@@ -105,7 +105,13 @@ background-color: var(--color1);
 }
 /*  */
 
-
+.floatedDashBtn{
+    position: fixed;
+    background-color: var(--color3);
+    bottom: 10px;
+    right: 10px;
+    /* width: ; */
+}
 
 @media screen and (max-width: 512px) {
     .d_menuAndResult{
@@ -114,5 +120,10 @@ background-color: var(--color1);
     }
     .dashTable {
         font-size: 12px;
+    }
+    .dashTable td:last-child{
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
     }
 }
