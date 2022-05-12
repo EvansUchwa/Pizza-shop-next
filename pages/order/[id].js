@@ -16,9 +16,6 @@ function OrderList({ order }) {
         { text: "Livré", img: "delivered.png", icon: "mdi-truck-check", key: "livraison" },
         { text: "Paiement", img: "paid.png", icon: "mdi-cash-check", key: "paiement" }
     ]
-    // const order = { status: { paiement: true, preparation: true, route: true, livraison: false } }
-
-
 
     function dispatchOrderEvent(orderStatus) {
         if (orderStatus.paiement) {
@@ -58,7 +55,8 @@ function OrderList({ order }) {
                     <article className={styles.oi_status}>
                         {
                             dispatchOrderEvent(order.status).map((st, index) => <p key={"order status nb" + index}>
-                                <Image src={"/img/" + st.img} width="50vh" height="50vh" />
+                                <Image src={"/img/" + st.img} width="50vh" height="50vh"
+                                    alt={"order event " + index} />
                                 <b>{st.text}</b>
                                 <i className={'mdi mdi-check-decagram ' + (order.status[st.key] && styles.currentStatus)}></i>
                             </p>)

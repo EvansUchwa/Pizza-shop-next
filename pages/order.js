@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
-// import OrderList from '../pageComponents/order/orderList';
-import { cartSelector } from '../Store/selectors/cartSelector';
-import styles from '../Assets/styles/orders.module.css'
+import styles from '../Assets/styles/order.module.css'
 
 
 function Orders() {
