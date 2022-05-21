@@ -1,9 +1,8 @@
 import axios from "axios"
-import moment from "moment"
-import { useEffect, useState } from "react"
+import { SimpleSectionLoader } from "../../../globalComponents/Loader"
 import { ConfirmationMessage } from "../../../globalComponents/Modal"
 import { getClientProtocolAndHost } from "../../../utils/request"
-
+import { useState } from "react"
 
 export const OrderDetailModal = ({ props }) => {
     const { order, styles } = props
@@ -39,7 +38,9 @@ export const OrderDetailModal = ({ props }) => {
 
 export const UpdateOrderModal = ({ props }) => {
     const { router, orderId, orderStatus } = props;
+    const [loader, setLoader] = useState(null)
 
+    loader ? loader : <button>Sauvegarder</button>
     function getNextStepAndNewStatus(orderStatus) {
         let oneStatusIsTrue = false;
         for (const key in orderStatus) {
@@ -70,10 +71,13 @@ export const UpdateOrderModal = ({ props }) => {
 
     async function handleUpdate(id) {
         // console.log(newStatus)
+        setLoader(<SimpleSectionLoader size={"30px"} />)
+
         const newStatus = '';
         const updatePizza = await axios.put(getClientProtocolAndHost() + '/api/order/' + id,
             getNextStepAndNewStatus(orderStatus).newStatus)
         updatePizza.data._id && router.replace(router.asPath)
+        setLoader(null)
     }
     return <ConfirmationMessage props={{
         text: <>

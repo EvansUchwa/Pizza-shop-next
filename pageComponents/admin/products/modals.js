@@ -2,6 +2,7 @@ import axios from "axios"
 import moment from "moment"
 import { useState } from "react"
 import { Form } from "../../../globalComponents/Form"
+import { SimpleSectionLoader } from "../../../globalComponents/Loader"
 import { ConfirmationMessage } from "../../../globalComponents/Modal"
 import { getClientProtocolAndHost } from "../../../utils/request"
 import { getPrice, getSizes, makeSizesAndPricesArray, orderThePrices, orderTheSizes } from "../../../utils/sizeAndprice"
@@ -57,8 +58,10 @@ export const AddProductModal = ({ props }) => {
         big_price: 0,
         img: []
     });
+    const [loader, setLoader] = useState(null)
 
     async function handleSubmit() {
+        setLoader(<SimpleSectionLoader size={"30px"} />)
         const sizes = orderTheSizes(formValues.sizes);
         const prices = orderThePrices(formValues.sizes, formValues)
         const newPizza = {
@@ -67,18 +70,18 @@ export const AddProductModal = ({ props }) => {
         }
         const body = new FormData();
         body.append('data', JSON.stringify(newPizza))
-
-
         body.append('img', formValues.img)
-
-
         const addPizza = await axios.post(getClientProtocolAndHost() + "/api/product", body)
+
+        setLoader(null)
         addPizza.data._id && router.replace(router.asPath)
     }
     return <Form props={{ submitFunction: handleSubmit }} >
         <ProductFormFields props={{ formValues, setFormValues }} />
         <div className="formBtn">
-            <button>Ajouter la pizza</button>
+            {
+                loader ? loader : <button>Ajouter la pizza</button>
+            }
         </div>
     </Form>
 }
@@ -93,8 +96,11 @@ export const UpdateProductModal = ({ props }) => {
         medium_price: getPrice(product.sizesAndPrices, "moyenne"),
         big_price: getPrice(product.sizesAndPrices, "grande")
     });
+    const [loader, setLoader] = useState(null)
 
     async function handleSubmit() {
+        setLoader(<SimpleSectionLoader size={"30px"} />)
+
         const sizes = orderTheSizes(formValues.sizes);
         const prices = orderThePrices(formValues.sizes, formValues)
         const body = {
@@ -105,11 +111,14 @@ export const UpdateProductModal = ({ props }) => {
 
         const updatePizza = await axios.put(getClientProtocolAndHost() + "/api/product/" + product._id, body)
         updatePizza.data._id && router.replace(router.asPath)
+        setLoader(null)
     }
     return <Form props={{ submitFunction: handleSubmit }} >
         <ProductFormFields props={{ formValues, setFormValues }} />
         <div className="formBtn">
-            <button>Sauvegarder</button>
+            {
+                loader ? loader : <button>Sauvegarder</button>
+            }
         </div>
     </Form>
 }

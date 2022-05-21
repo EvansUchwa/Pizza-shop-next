@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import styles from "../../Assets/styles/cart/cart.module.css"
 import { Form, InputText, TextArea } from '../../globalComponents/Form';
+import { setCartToEmpty } from '../../Store/actions/cartActions';
 import { setModalContentOnStore, setModalOnStore } from '../../Store/actions/modalActions';
 
 
@@ -54,6 +55,7 @@ const PaieOnDeliveryModal = ({ total }) => {
         username: "", address: "", tel: ""
     })
     const router = useRouter()
+    const dispatch = useDispatch()
     const hostAndProtocol = window.location.protocol + '//' + window.location.host
 
     async function handleSubmit() {
@@ -67,7 +69,7 @@ const PaieOnDeliveryModal = ({ total }) => {
                     livraison: false
                 }
             });
-
+            dispatch(setCartToEmpty())
             router.push("/order/" + addOrder.data._id)
         } catch (error) {
             console.log(error)

@@ -32,3 +32,9 @@ export function removeToCart(index) {
         payload: index
     }
 }
+
+export function setCartToEmpty() {
+    return {
+        type: "SET_CART_EMPTY",
+    }
+}

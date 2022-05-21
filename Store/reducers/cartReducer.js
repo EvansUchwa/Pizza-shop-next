@@ -31,6 +31,11 @@ const cartReducer = (state = defaultCartValue, action) => {
             return copyCart;
         }
 
+        case "SET_CART_EMPTY": {
+            localStorage.removeItem('pizza-app-cart')
+            return defaultCartValue;
+        }
+
 
         default:
             return state;

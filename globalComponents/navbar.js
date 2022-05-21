@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useSelector } from 'react-redux'
 import { cartSelector } from '../Store/selectors/cartSelector'
 import Link from 'next/link'
-function Navbar() {
+function Navbar({ isAuth }) {
   const cart = useSelector(cartSelector)
   const [cartLength, setCartLength] = useState(0);
 
@@ -19,6 +19,9 @@ function Navbar() {
         <div className={styles.left_text}>
           <p>Commander mtn</p>
           <b>+229 0600000</b>
+          {
+            isAuth
+          }
         </div>
       </section>
 
@@ -39,12 +42,5 @@ function Navbar() {
   )
 }
 
-// export const getServerSideProps = (context) => {
-//   if (context.req.cookies.token)
-//     return {
-//       props: {
-//         isAuth: true
-//       }
-//     }
-// }
+
 export default Navbar

@@ -4,19 +4,22 @@ import styles from "../../Assets/styles/admin/auth.module.css"
 import axios from 'axios';
 import { getClientProtocolAndHost } from '../../utils/request';
 import { useRouter } from 'next/dist/client/router';
+import { SimpleSectionLoader } from '../../globalComponents/Loader';
 
 function Login() {
     const [formValues, setFormValues] = useState({ mail: "", password: "" });
     const [logError, setLogError] = useState(false)
+    const [loader, setLoader] = useState(null)
     const router = useRouter();
     async function handleLogin() {
+        setLoader(<SimpleSectionLoader size={"50px"} />)
         try {
             const login = await axios.post(getClientProtocolAndHost() + '/api/auth', formValues)
             router.push('/admin/dashboard')
         } catch (error) {
             setLogError(error.response.data)
         }
-
+        setLoader(null)
     }
     return (
         <div className={styles.auth}>
@@ -33,7 +36,9 @@ function Login() {
                     required: true, size: "semi"
                 }} />
                 <div className='formBtn'>
-                    <button>Se connecter</button>
+                    {
+                        loader ? loader : <button>Se connecter</button>
+                    }
                 </div>
                 {
                     logError && <span className='fieldError'>{logError} </span>
