@@ -84,7 +84,7 @@ export const getServerSideProps = async (context) => {
         console.log(error)
     }
 
-    if (req.cookies.token !== process.env.adminToken) {
+    if (req.cookies.token !== process.env.NEXT_PUBLIC_adminToken) {
         return {
             redirect: {
                 destination: "/admin/login"

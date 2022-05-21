@@ -6,10 +6,10 @@ export default async function handler(req, res) {
     if (method == 'POST') {
         const { mail, password } = req.body;
 
-        if (mail == process.env.adminMail) {
-            if (password == process.env.adminPassword) {
+        if (mail == process.env.NEXT_PUBLIC_adminMail) {
+            if (password == process.env.NEXT_PUBLIC_adminPassword) {
 
-                res.setHeader("Set-Cookie", cookie.serialize("token", process.env.adminToken,
+                res.setHeader("Set-Cookie", cookie.serialize("token", process.env.NEXT_PUBLIC_adminToken,
                     { maxAge: 60 * 60, sameSite: "strict", path: "/" }))
                 res.send({ mail })
             } else {
