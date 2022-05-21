@@ -10,9 +10,10 @@ function Footer() {
             </section>
             <section className={styles.footer_text}>
                 <article>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Aut fugiat ratione culpa, deserunt odit quidem eius sint facilis delectus beatae harum ullam officia reiciendis
-                        aperiam minima magni consequatur provident praesentium!</p>
+                    <p>
+                        Chez Pizza-Pedia nous nous engageons à utiliser les meilleurs produits pour garnir vos pizzas.
+
+                        Notre amour pour les bons produits et ma passion du bien manger nous permettent de vous emmener dans un voyage culinaire aux milliers de saveurs.</p>
                 </article>
                 <article>
                     <h3>Ou nous trouvez ?</h3>

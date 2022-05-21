@@ -388,7 +388,8 @@ export function Form({ props, children }) {
     return (
         <form onSubmit={(event) => handleSumbit(event)}
             className={classname ? classname : ""}
-            onKeyDown={(event) => { event.key == 'Enter' && event.preventDefault(); }}>
+            onKeyDown={(event) => { event.key == 'Enter' && event.preventDefault(); }}
+            encType="multipart/form-data">
             {
                 children
             }

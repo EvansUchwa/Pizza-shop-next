@@ -17,7 +17,7 @@
   border-radius: 10px;
   animation: modalFade 0.3s ease-in;
   max-height: 90%;
-  min-width: 300px;
+  width: 30%;
   max-width: 90%;
   overflow: auto;
 }
@@ -76,5 +76,12 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 758px) {
+  .modal > section {
+    width: 80%;
   }
 }

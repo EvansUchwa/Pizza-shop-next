@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-import CartTable from '../pageComponents/cart.js/cartTable';
-import CartTotal from '../pageComponents/cart.js/cartTotal';
+import CartTable from '../pageComponents/cart/cartTable';
+import CartTotal from '../pageComponents/cart/cartTotal';
 import { cartSelector } from '../Store/selectors/cartSelector';
 
 

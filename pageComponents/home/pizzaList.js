@@ -7,21 +7,21 @@ function PizzaList({ pizzaList }) {
     return (
         <div className={styles.pizzaList}>
             <h1>
-                Lorem Ipsum
+                PIZZA-SHOP COMMENCE
+                LÀ OÙ LES AUTRES
+                PIZZERIAS S’ARRÊTENT
             </h1>
             <p>
-
-                Neque porro quisquam est qui dolorem ipsum quia dolor
-                sit amet, consectetur, adipisci velit...
+                Nous nous engageons à utiliser les meilleurs produits pour garnir vos pizzas.
             </p>
             <section className={styles.plPizzas}>
                 {
                     pizzaList.map((product, index) => <article key={"pizza l pz nb" + index}
                         className={styles.pizzaCard}>
-                        <Link href={"/product/" + product._id} passHref>
-                            <Image src="/img/pizza.png" alt="la pizza de la mama"
-                                width="100px" height="100px" />
-                        </Link>
+                        <a href={"/product/" + product._id} passHref>
+                            <Image src={product.img} alt="la pizza de la mama"
+                                layout='fill' />
+                        </a>
                         <b>{product.name}</b>
                         <span>{product.sizesAndPrices[0].price} €</span>
                         <p>

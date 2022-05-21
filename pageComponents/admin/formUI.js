@@ -1,8 +1,14 @@
-import { Form, InputCheckBox, InputText, TextArea } from "../../globalComponents/Form"
+import { Form, InputCheckBox, InputFile, InputText, TextArea } from "../../globalComponents/Form"
 
 export const ProductFormFields = ({ props }) => {
     const { formValues, setFormValues } = props;
     return <>
+        <InputFile props={{
+            name: "img",
+            label: "Photo de la pizza",
+            formValues, setFormValues,
+            maxFiles: 1, width: "90px", height: "90px"
+        }} />
         <InputText props={{
             name: "name", ph: "Italiano...",
             label: "Nom de la pizza",

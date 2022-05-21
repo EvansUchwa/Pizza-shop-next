@@ -88,8 +88,8 @@ export const DeleteOrderModal = ({ props }) => {
     const { router, orderId } = props;
 
     async function handleDelete(id) {
-        const deletePizza = await axios.delete(getClientProtocolAndHost() + '/api/order/' + id)
-        deletePizza.data._id && router.replace(router.asPath)
+        const deleteOrder = await axios.delete(getClientProtocolAndHost() + '/api/order/' + id)
+        deleteOrder.data._id && router.replace(router.asPath)
     }
     return <ConfirmationMessage props={{
         text: "Voulez vous vraiment supprimez cette commande ?",

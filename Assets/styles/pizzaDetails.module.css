@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: 50px 0;
+    padding: 100px 0;
 }
 .pizzaDetails input[type="checkbox"]{
     accent-color: var(--color1);

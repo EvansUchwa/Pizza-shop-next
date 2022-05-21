@@ -54,18 +54,23 @@ export const AddProductModal = ({ props }) => {
         sizes: [],
         small_price: 0,
         medium_price: 0,
-        big_price: 0
+        big_price: 0,
+        img: []
     });
 
     async function handleSubmit() {
         const sizes = orderTheSizes(formValues.sizes);
         const prices = orderThePrices(formValues.sizes, formValues)
-        const body = {
-            name: formValues.name,
-            img: "/img/pizza.png",
-            description: formValues.description,
-            sizesAndPrices: makeSizesAndPricesArray(sizes, prices),
+        const newPizza = {
+            name: formValues.name, description: formValues.description,
+            sizesAndPrices: makeSizesAndPricesArray(sizes, prices)
         }
+        const body = new FormData();
+        body.append('data', JSON.stringify(newPizza))
+
+
+        body.append('img', formValues.img)
+
 
         const addPizza = await axios.post(getClientProtocolAndHost() + "/api/product", body)
         addPizza.data._id && router.replace(router.asPath)
@@ -94,7 +99,6 @@ export const UpdateProductModal = ({ props }) => {
         const prices = orderThePrices(formValues.sizes, formValues)
         const body = {
             name: formValues.name,
-            img: "/img/pizza.png",
             description: formValues.description,
             sizesAndPrices: makeSizesAndPricesArray(sizes, prices),
         }

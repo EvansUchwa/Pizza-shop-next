@@ -1,5 +1,8 @@
 .dashboard{
-    padding: 50px 0;
+    padding: 150px 0 !important;
+}
+.dashboard h1{
+    text-align: center;
 }
 .d_menuAndResult{
 max-width: 90%;

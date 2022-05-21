@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useRouter } from "next/router";
 import { setModalContentOnStore, setModalOnStore } from '../../../Store/actions/modalActions';
-import { OrderDetailModal, UpdateOrderModal } from '../orders/modals';
+import { DeleteOrderModal, OrderDetailModal, UpdateOrderModal } from '../orders/modals';
 
 function OrderManager({ styles, orders }) {
     const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function OrderManager({ styles, orders }) {
         } else if (action == "update") {
             comp = <UpdateOrderModal props={{ styles, orderId: order._id, orderStatus: order.status, router }} />;
         } else if (action == "delete") {
-            comp = "<DeleteProductModal props={{ productId: product._id, styles, router }} />";
+            comp = <DeleteOrderModal props={{ styles, orderId: order._id, router }} />;
         }
         dispatch(setModalContentOnStore(comp))
         dispatch(setModalOnStore(true))

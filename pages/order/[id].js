@@ -25,6 +25,7 @@ function OrderList({ order }) {
         }
     }
     return (<div className={styles.orders}>
+        <h1>Vos commandes</h1>
         <div className={styles.ordersList}>
 
             {

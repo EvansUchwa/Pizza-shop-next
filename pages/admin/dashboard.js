@@ -1,11 +1,15 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useRouter } from 'next/dist/client/router';
 import styles from "../../Assets/styles/admin/dashboard.module.css"
 import OrderManager from '../../pageComponents/admin/orders/orderManager'
 import ProductManager from '../../pageComponents/admin/products/productManager'
-import { getProtocolAndHost } from '../../utils/request'
+import { getClientProtocolAndHost, getProtocolAndHost } from '../../utils/request'
+
+
 function Dashboard({ products, orders, isAuth }) {
     const [navType, setNavType] = useState("produits")
+    const router = useRouter();
     const dashMenus = [
         { label: "Produits", value: "produits", id: "dm_1" },
         { label: "Commandes", value: "commandes", id: "dm_2" },
@@ -21,9 +25,17 @@ function Dashboard({ products, orders, isAuth }) {
                 orders={orders} />
         }
     }
+
+    async function logout() {
+        const req = await axios.delete(getClientProtocolAndHost() + "/api/auth/logout")
+        if (req.data.isDisconnected) {
+            router.push('/admin/login')
+        }
+    }
     return (
         <div className={styles.dashboard}>
-            {isAuth && <button className={styles.floatedDashBtn}>Se deconnecter</button>}
+            {isAuth && <button className={styles.floatedDashBtn}
+                onClick={() => logout()}>Se deconnecter</button>}
             <h1>Bonjour Admin ....</h1>
 
             <section className={styles.d_menuAndResult}>
